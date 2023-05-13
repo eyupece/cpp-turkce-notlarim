@@ -6,7 +6,7 @@ Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takıla
 
 - [**C++ Notlarım İçindekiler**](#hello-world)
   - [Hello World!](#hello-world)
-  
+  - [Yorum(Comment) Ekleme](#yorumcomment-ekleme)
 
 ## Hello World
 
@@ -22,3 +22,21 @@ Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
 "cout << "hello world!" ;" satirinda de cout u kullanabilmemiz icin include etmemiz lazimdir. programlamaya basladigim zaman bunun daha basit bir tanimini aradim hello world orneginde. fakat bulamadim. hayatinda ilk defa kod goren birinin anlamadigi bir #include gormesi pek hos degil. simdi benim yapabilecegim en basit tanim budur.
 
 
+```
+#include <iostream> 
+using namespace std; 
+int main() {
+cout << "Hello World!;
+reurn 0;
+}
+```
+  ```cout << ''Hello World!'' << endl;``` şeklinde de yazılabilirdi. Endl;; end line yani satır sonu demektir ve ekrana yazdırılan çıktının ardından görüntülenecek veriyi bir alt satırda görüntülemeye yarar. 
+  
+```return 0;``` satırının genel kabul görmüş manası da "Program hatasız sonlandırıldı" demek oluyor.  
+
+## Yorum(Comment) Ekleme
+
+
+// kullanılırsa o satır yokmuş gibi hareket edilir. 
+
+Eğer birden fazla satırda sürekli // kullanmak istemiyorsak /* yapıp yorumu bitirmek istediğimizde */ yaparsak oradaki yorum da kodda gözükmez. Yorum olarak kalır. Bazı programlarda /* ifadesinden sonra her satırın başında * olabilir olup olmaması önemli değil. 
