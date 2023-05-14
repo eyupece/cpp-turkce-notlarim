@@ -1,16 +1,20 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 13/05/2023)
+(Son güncelleme: 14/05/2023)
 
-Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme. Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
+Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
+
+Öğrendiklerim arasında kendi yorumum bulunmaktadır. Bu yüzden yanlış olduğunu düşündüğün bir nokta varsa muhakkak ulaş bana. Hata yapmış olabilirim :)
+
+Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
 
 - [**C++ Notlarım İçindekiler**](#c-notlarım)
   
   - [Hello World!](#hello-world)
   - [Yorum(Comment) Ekleme](#yorumcomment-ekleme)
   - [Değişkenler(Variables) ve Tanımlama ](#de%C4%9Fi%C5%9Fkenlervariables-ve-tan%C4%B1mlama)
-  
-
+  - [Değişken İsimleri ve Belirleyiciler Identifiers](#değişken-i̇simleri-ve-belirleyiciler-identifiers)
+  - [Değişken Tipleri](#değişken-tipleri)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -38,6 +42,7 @@ reurn 0;
 ```return 0;``` satırının genel kabul görmüş manası da "Program hatasız sonlandırıldı" demek oluyor.  
 
 ## Yorum(Comment) Ekleme
+
 ![https://github.com/eyupece/cpp-note/blob/main/o7oz5ph.png](./o7oz5ph.png "GitHub")
 
 // kullanılırsa o satır yokmuş gibi hareket edilir. 
@@ -74,3 +79,23 @@ cout << z << endl;
   cout << a << b << endl;
   }
   ```
+
+## Değişken İsimleri ve Belirleyiciler Identifiers 
+
+![https://github.com/eyupece/cpp-note/blob/main/belirleyiciler.png](./belirleyiciler.png "GitHub")
+
+Sembollerden sadece _ ile başlayabilir 
+
+## Değişken Tipleri
+
+![https://github.com/eyupece/cpp-note/blob/main/degisken-tipleri.png](./degisken-tipleri.png "GitHub")
+
+Float: Ondalıklı sayı 3.14 
+
+Boolean: 0-1 True-False  
+
+Void:Tipsiz. Ne olduğu bilinmiyorsa kullanılır 
+
+Null: boş 
+
+ 
