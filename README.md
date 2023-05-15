@@ -15,6 +15,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Değişkenler(Variables) ve Tanımlama ](#de%C4%9Fi%C5%9Fkenlervariables-ve-tan%C4%B1mlama)
   - [Değişken İsimleri ve Belirleyiciler Identifiers](#değişken-i̇simleri-ve-belirleyiciler-identifiers)
   - [Değişken Tipleri](#değişken-tipleri)
+  - [ASCII Tablosu](#ascii-tablosu)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -97,5 +98,10 @@ Boolean: 0-1 True-False
 Void:Tipsiz. Ne olduğu bilinmiyorsa kullanılır 
 
 Null: boş 
+
+## ASCII TAblosu
+
+![https://github.com/eyupece/cpp-note/blob/main/degisken-tipleri.png](./ASCII%20TABLE.png "GitHub")
+
 
  
