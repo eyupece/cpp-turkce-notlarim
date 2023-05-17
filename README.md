@@ -16,6 +16,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Değişken İsimleri ve Belirleyiciler Identifiers](#değişken-i̇simleri-ve-belirleyiciler-identifiers)
   - [Değişken Tipleri](#değişken-tipleri)
   - [ASCII Tablosu](#ascii-tablosu)
+  - [Tip Dönüşümleri](#tip-dönüşümleri)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -99,9 +100,99 @@ Void:Tipsiz. Ne olduğu bilinmiyorsa kullanılır
 
 Null: boş 
 
-## ASCII TAblosu
+## ASCII Tablosu
 
 ![https://github.com/eyupece/cpp-note/blob/main/degisken-tipleri.png](./ASCII%20TABLE.png "GitHub")
 
 
+## Tip Dönüşümleri 
+
+**char -> integer : ** 
+```
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int a = 10;
+	float pi = 3.14;
+	long tl = 327462384634783; 
+  char b = 'x';
+	
+	cout << a << endl;
+	cout << pi << endl; cout << tl << endl;
+	cout << b << endl;
+	
+	int cc = b;
+	cout << cc << endl;
+
+	return 0;
+}
+```
+Terminal :
+```
+10
+3.14
+1193085855
+x
+120
+```
+120'nin sebebi ASCII Tablosu
+Her karakter bir sayıdır. Char'da bahsi geçen harfleri integer'a çevirdiğinden dolayı decimala çevirir.  
+X->120 
+
+**float -> integer :** 
+```
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int a = 10;
+	float pi = 3.14;
+	long tl = 327462384634783; 
+  char b = 'x';
+	
+	cout << a << endl;
+	cout << pi << endl; cout << tl << endl;
+	cout << b << endl;
+	
+	int cc = b;
+	cout << cc << endl;
+  
+  int ipi = pi;
+  cout << ipi << endl; // 3
+
+	return 0;
+}
+```
+Son satırdaki float -> integer dönüşümünde sonuç 3 çıkar.
+
+Normalde pi 3.14 bu yüzden floatla yazdık fakat ipi olarak tanımlarsak ve integer olarak yazarsak ondalıklı kısmını atıp 3 olarak çıkarır.
+
+Kendiniz değer girip uygulama yaparsanız daha etkili sonuç elde edersiniz.
  
+ **integer -> float :** 
+```
+int birsayi= 5;
+float sayi2 = birsayi; 
+cout << sayi2 << endl; // Sonuç 5 Çıkar
+```
+**integer -> char :**
+```
+int sayiint = 37; 
+char sayiiyeni = sayiint; 
+cout << sayiiyeni << endl; // Sonuç % çıkar
+```
+Sonucu ASCII tablosundan test et
+
+***KESTİRME BASİT YOL :***
+```
+int yenisayi = 35; 
+ cout << (char) yenisayi << endl; // Sonuç # çıkar
+```
+İfade edildiği gibi cout <<(int,char,float vb.)identifier << endl; 
+
+Şeklinde daha kısa yazmak mümkün 
+
+Buna *Type casting* denir 
