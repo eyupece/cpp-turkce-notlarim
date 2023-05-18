@@ -17,7 +17,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Değişken Tipleri](#değişken-tipleri)
   - [ASCII Tablosu](#ascii-tablosu)
   - [Tip Dönüşümleri](#tip-dönüşümleri)
-  - [İşlemler](#işlemler)
+  - [İşlemler - Operatörler](#i̇şlemler-operatörler)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -198,7 +198,7 @@ int yenisayi = 35;
 
 Buna *Type casting* denir 
 
-## İşlemler
+## İşlemler (Operatörler)
 
 ![https://github.com/eyupece/cpp-note/blob/main/degisken-tipleri.png](./islemler.png "GitHub")
 
