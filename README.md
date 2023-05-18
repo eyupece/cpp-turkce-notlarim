@@ -17,6 +17,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Değişken Tipleri](#değişken-tipleri)
   - [ASCII Tablosu](#ascii-tablosu)
   - [Tip Dönüşümleri](#tip-dönüşümleri)
+  - [İşlemler](#işlemler)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -196,3 +197,82 @@ int yenisayi = 35;
 Şeklinde daha kısa yazmak mümkün 
 
 Buna *Type casting* denir 
+
+## İşlemler
+
+![https://github.com/eyupece/cpp-note/blob/main/degisken-tipleri.png](./islemler.png "GitHub")
+
+**Complement " ~ "** ikilik sistemde 0ları 1 ,1 leri 0 yap demektir. 
+```
+#include <iostream>
+using namespace std;
+
+int main() {
+
+	int a = 10;
+	 cout << a << endl; 
+
+	a++; //bir arttır demek posfix
+	 cout << a << endl;
+
+	++a; //bir tane daha arttıracağız increment prefix
+	 cout << a << endl; //a en son 12 oldu b'yi de 20 diye tamamladık
+
+	int b = 20;
+     cout << a + b << endl;
+     cout << 10 + 3 * 5 << endl; //işlem önceliği vardır.
+	// * + - /
+	 cout << 7 % 5 << endl; // remainder, modulo 34 3 4 gibi kalanı ifade eder
+
+	a--; //a'nın değerini bir azalt, a en son 12ydi 11 oldu
+    a = a - 1; // ilk derslerde ='in matematiksel olmadığını belirttik. Bu ifade a'ya bir azalt demektir a = 10 olur
+    cout << a << endl;
+
+	return 0;
+}
+```
+	
+Terminal
+```
+10
+11
+12
+32
+25
+2
+10
+```	
+-----------------------------------------------------------
+
+***++a ile a++ kıyası***
+
+```
+/* ++a; a++; 
+bu iki ifade arasında bu kullanımda fark yok a'nın değeri 12 */
+
+cout << a++ << endl; /* a'nın değeri denkleme alınır 
+sonra bir arttırılır yani aslında bu 10u basıp sonra 11 yapıyor o yüzden 10 gözüküyor */
+
+cout << ++a << endl; /* a'nın değeri önce arttırılır sonra denkleme eklenir. 
+Yani aslında burada da 11di once 1 arttırıp 12 yapıyor sonra 12 olarak basıyor */ 
+//bu iki ifade arasında fark var
+```
+Terminal 
+```
+10
+10 
+12
+```
+
+--------------------------------------------------------------
+
+```
+int x = 10;
+x--;
+x = x - 1; // iki ifade aynı hatta tek başına yazılırsa --x de bunlarla aynı 
+x -= 1; // bu ifade yukarıda yer alan ifadenin kısaltılmış halidir
+x += 6; // x = x+6 demektir
+x *= 2; // x = x*2
+
+cout << x << < endl; // Sonuç 26
+```
