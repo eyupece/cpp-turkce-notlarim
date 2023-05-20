@@ -18,6 +18,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [ASCII Tablosu](#ascii-tablosu)
   - [Tip Dönüşümleri](#tip-dönüşümleri)
   - [İşlemler - Operatörler](#i̇şlemler-operatörler)
+  - [Left Shift & Right Shift](#left-shift--right-shift)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -103,7 +104,7 @@ Null: boş
 
 ## ASCII Tablosu
 
-![https://github.com/eyupece/cpp-note/blob/main/degisken-tipleri.png](./ASCII%20TABLE.png "GitHub")
+![https://github.com/eyupece/cpp-note/blob/main/ASCII%20TABLE.png.png](./ASCII%20TABLE.png "GitHub")
 
 
 ## Tip Dönüşümleri 
@@ -200,7 +201,7 @@ Buna *Type casting* denir
 
 ## İşlemler (Operatörler)
 
-![https://github.com/eyupece/cpp-note/blob/main/degisken-tipleri.png](./islemler.png "GitHub")
+![https://github.com/eyupece/cpp-note/blob/main/islemler.png](./islemler.png "GitHub")
 
 **Complement " ~ "** ikilik sistemde 0ları 1 ,1 leri 0 yap demektir. 
 ```
@@ -276,3 +277,25 @@ x *= 2; // x = x*2
 
 cout << x << < endl; // Sonuç 26
 ```
+
+## Left Shift & Right Shift
+
+![https://github.com/eyupece/cpp-note/blob/main/leftshift.png](./leftshift.png "GitHub")
+
+
+![https://github.com/eyupece/cpp-note/blob/main/leftshiftt.png](./leftshiftt.png "GitHub")
+
+Iki kaydır demek binary sistemde  aynen yaz sonuna iki 0 ekle demektir. Sonrasında onluk sisteme geri geçilir. 
+
+
+![https://github.com/eyupece/cpp-note/blob/main/rightshift.png](./rightshift.png "GitHub")
+
+![https://github.com/eyupece/cpp-note/blob/main/rightshiftt.png](./rightshiftt.png "GitHub")
+
+Right shiftte sonda 0 yoksa diğer basamaklar silinir 
+
+![https://github.com/eyupece/cpp-note/blob/main/bitwiseorn.png](./bitwiseorn.png "GitHub")
+
+![https://github.com/eyupece/cpp-note/blob/main/bitwiseornn.png](./bitwiseornn.png "GitHub")
+
+Tabii ki bu örneklerler yetinmemelisiniz. Lütfen sayıları ve [operatörleri](#i̇şlemler-operatörler) değiştirip yeni yeni örnekler yapın. DAha iyi oturacaktır.
