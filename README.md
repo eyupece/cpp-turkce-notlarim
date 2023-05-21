@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 14/05/2023)
+(Son güncelleme: 21/05/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
