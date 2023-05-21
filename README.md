@@ -4,7 +4,11 @@
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
-Öğrendiklerim arasında kendi yorumum bulunmaktadır. Bu yüzden yanlış olduğunu düşündüğün bir nokta varsa muhakkak ulaş bana. Hata yapmış olabilirim :)
+Bu notları c++ programlama dilini öğrenirken aldım.
+
+Öğrendiklerim arasında kendi yorumum bulunmaktadır. 
+
+Bu yüzden yanlış olduğunu düşündüğün bir nokta varsa muhakkak ulaş bana. Hata yapmış olabilirim :)
 
 Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
 
