@@ -18,7 +18,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [ASCII Tablosu](#ascii-tablosu)
   - [Tip Dönüşümleri](#tip-dönüşümleri)
   - [İşlemler - Operatörler](#i̇şlemler-operatörler)
-  - [Left Shift & Right Shift](#left-shift--right-shift)
+  - [Temel Giriş ve Çıkış İşlemleri (cin ve cout)](#temel-giriş-ve-çıkış-i̇şlemleri-cin-ve-cout)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -299,3 +299,40 @@ Right shiftte sonda 0 yoksa diğer basamaklar silinir
 ![https://github.com/eyupece/cpp-note/blob/main/bitwiseornn.png](./bitwiseornn.png "GitHub")
 
 Tabii ki bu örneklerler yetinmemelisiniz. Lütfen sayıları ve [operatörleri](#i̇şlemler-operatörler) değiştirip yeni yeni örnekler yapın. DAha iyi oturacaktır.
+
+
+## Temel Giriş ve Çıkış İşlemleri (cin ve cout)
+
+***Standart output:*** monitör 
+
+***Standart input :*** klavye olarak düşünülmeli
+
+C input(cin) 
+
+C output(cout) 
+
+```
+#include <iostream>
+using namespace std;
+
+int main()
+{
+int x = 10;
+cout << x << endl;
+
+cin >> x; // bu komut klavyeden girilen değeri okur
+cout << "klavyeden " << x << " degerini girdiniz" << endl; /*türkçe harf kullanma 
+Ayrıca kelimelerin bitişik olmaması için sonların ve başlarına boşluk koy */ 
+cout << "klavyede girilen degerin 10 fazlasi " << x+10 << " olur" << endl;
+
+return 0;
+}
+```
+Terminal
+```
+10
+70
+klavyeden 70 degerini girdiniz
+klavyede girilen degerin 10 fazlasi 80 olur
+```
+	
