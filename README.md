@@ -1,8 +1,10 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 21/05/2023)
+(Son güncelleme: 22/05/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
+
+Unutma programlama dilini öğrenmenin en iyi yolu pratik yapmaktır. Öğrendiklerin,gördüğün kodları denemekten çekinme ve sürekli kodla iç içe ol. Kolay gelsin :)
 
 Bu notları c++ programlama dilini öğrenirken aldım.
 
@@ -23,6 +25,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Tip Dönüşümleri](#tip-dönüşümleri)
   - [İşlemler - Operatörler](#i̇şlemler-operatörler)
   - [Temel Giriş ve Çıkış İşlemleri (cin ve cout)](#temel-giriş-ve-çıkış-i̇şlemleri-cin-ve-cout)
+  - [İf,Else Ve Else İf Yapıları](#i̇felse-ve-else-i̇f-yapıları)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -339,4 +342,78 @@ Terminal
 klavyeden 70 degerini girdiniz
 klavyede girilen degerin 10 fazlasi 80 olur
 ```
+
+## İf,Else Ve Else İf Yapıları 
+
+kod yazarken en çok kullanılan yapılardan biriyle karşı karşıyayız.
+
+***İf yapısı*** belirli koşula bağlı olarak kodu çıkarmamıza olanak sağlar. Mesela eğer(if) x sayısı 0'dan büyükse bu sayı pozitiftir.
+```
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+int a;
+a = 10;
+ if (a < 20){ // Boolean TRUE FALSE. Eğer yapısı ile eğer ki a<20 ise sonucu yazacak fakat 20'den büyükse sonucu yazmayacak
+cout << "a 20'den kucuk" << endl; }
+}
+```
+a 20'den kucuktur ifadesini yazar.
 	
+Bu kodu kendiniz deneyip a sayısıyla oynama yapın. a sayısını 20ye eşit ya da büyük yaparsanız ekranda bir şey görmeyeceğinizi test edin.
+	
+***Else yapısı*** şayet değilseyi ifade ediyor. Yani Eğer … değilse o zaman …. 
+***Not:*** Else yapısından bahsedebilmemiz için if yapısının kullanılmış olması gerekiyor. Yani aslında if ile bir koşul belirtiyoruz ve o sağlamazsa 
+kalan değerler için else geçerlidir diyoruz.
+***Önemli NOT : ***  " = " operatörü C dilinde bir değişkene değer atamamızı sağlarken " == " operatörü ise "eşit mi?" koşulunu denetler, eğer değerler eşitse true (1) döndürür, değilse false (0) döndürür. 
+" != " operatörü "eşit değil mi" demektir.
+
+a=20 diye bir sayı tanımladığımızı düşünelim. Bu koddan sonra a=10 dersek matematiksel olarak bunun mümkün olmadığı kanısına varız. Fakat c++ için a=10 ifadesi
+"assignment" yani atama işlemidir. a=10 ifadesinden sonra a'nın yeni değeri 10 olur.
+	
+
+***Else if yapısı *** eğer değilse … şeklinde açıklanabilir.
+
+Şimdi bir örnek üzerinden if,else if ve else ifadelerine bakalım.
+	
+```
+#include <iostream> 
+using namespace std; 
+  
+int main() 
+{ 
+
+int a; 
+a = 10; 
+
+ if (a > 20) { // Boolean TRUE | FALSE. Eğer yapısı ile eğer ki a<20 ise sonucu yazacak fakat 20'den büyükse sonucu yazmayacak 
+    cout << "a 20'den buyuk" << endl; 
+} 
+
+ else if (a == 20) { // bu yapı eğer değilse ... ifadesini ifade ediyor 
+    cout << "a 20ye esit" << endl; 
+} 
+ else if  (a >= 15) { 
+    cout << "a 15e esit veya buyuk" << endl; 
+} 
+else { // bu yapı değilseyi ifade ediyor 
+    cout << "a 15'den kucuk" << endl; 
+} 
+
+}
+```	 
+İlk aşamada a'yı 10 olarak tanımladık. 
+
+If yapısı ile eğer a>20 ise "a 20'den buyuk" ifadesini yazdırdık fakat a 20'den küçük olduğu için bu çıkmadı 
+
+Else if yapısı ile eğer a >20 değilse a 20 ye eşit midiri (a==20) tanımladık. Eğer a 20'ye eşit ise "a 20'ye eşit"i çıkaracaktı fakat eşit olmadığından bunu çıkarmadı. 
+
+Sonraki Else if yapısıyla a 15'e büyük eşit midiri sorguluyoruz(a>=15). Eğer a 15e büyük eşitse "a 15e esit veya buyuk" ifadesini çıkaracaktı ama yanlış olduğundan çıkarmadı 
+
+Son Else yapısında eğer bunlar değilse sonuç olarak "a 15den kucuktur" ifadesi ekranımıza çıktı. 
+	
+Burada unutulmaması gereken noktalardan biri de eğer ifadelerin hepsi false olmayıp true ifadeler de olsaydı ondan sonra gelenleri mantıken çıkarmayacağı. 
+Bunun en güzel örneğini sadece a=10 yerine a=20 ifadesini yazmak. Bunu yazıp deneyerek son adıma geçmeden kodun sonuçlanacağını görebilirsiniz.
