@@ -375,7 +375,7 @@ a=20 diye bir sayı tanımladığımızı düşünelim. Bu koddan sonra a=10 der
 "assignment" yani atama işlemidir. a=10 ifadesinden sonra a'nın yeni değeri 10 olur.
 	
 
-***Else if yapısı *** eğer değilse … şeklinde açıklanabilir.
+***Else if yapısı*** eğer değilse … şeklinde açıklanabilir.
 
 Şimdi bir örnek üzerinden if,else if ve else ifadelerine bakalım.
 	
