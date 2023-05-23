@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 22/05/2023)
+(Son güncelleme: 23/05/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
@@ -26,6 +26,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [İşlemler - Operatörler](#i̇şlemler-operatörler)
   - [Temel Giriş ve Çıkış İşlemleri (cin ve cout)](#temel-giriş-ve-çıkış-i̇şlemleri-cin-ve-cout)
   - [İf,Else Ve Else İf Yapıları](#i̇felse-ve-else-i̇f-yapıları)
+  - [Switch-Case Yapısı](#switch-case-yapısı)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -417,3 +418,38 @@ Son Else yapısında eğer bunlar değilse sonuç olarak "a 15den kucuktur" ifad
 	
 Burada unutulmaması gereken noktalardan biri de eğer ifadelerin hepsi false olmayıp true ifadeler de olsaydı ondan sonra gelenleri mantıken çıkarmayacağı. 
 Bunun en güzel örneğini sadece a=10 yerine a=20 ifadesini yazmak. Bunu yazıp deneyerek son adıma geçmeden kodun sonuçlanacağını görebilirsiniz.
+	
+## Switch-Case Yapısı 
+
+ Switch-case yapısı ve if-else yapısı aynı işlevi yerine getirebilir, ancak farklı durumlarda daha uygun olanı tercih edebilirsiniz. İkisi arasındaki tercih genellikle kodun okunabilirliği, sürdürülebilirliği ve karmaşıklığına bağlıdır.
+	
+```
+switch (değer) {
+    case durum1:
+        // durum1 için yapılacak işlemler
+        break;
+    case durum2:
+        // durum2 için yapılacak işlemler
+        break;
+    // ...
+    default:
+        // hiçbir duruma uymayan durumlar için yapılacak işlemler
+        break;
+}
+```
+	
+	Yapının çalışma mantığı şu şekildedir:
+
+1.```değer``` ifadesi, switch ifadesinin içine yazılan ve karşılaştırılacak olan ifadedir. Genellikle bir değişken veya ifade olabilir.
+
+	
+2.Ardından, her bir ```case``` durumu ile karşılaştırma yapılır. Eğer ```değer```, bir ```case``` durumuna eşitse, o duruma ait olan kod bloğu çalıştırılır. Çalıştırılan kod bloğunun sonunda ```break``` ifadesi bulunur, bu sayede diğer durumlar kontrol edilmez ve switch-case yapısından çıkılır.
+
+		
+3.Eğer ```değer```, hiçbir ```case``` durumuna eşit değilse, ```default``` durumu (opsiyonel olarak kullanılır) çalıştırılır. Bu durum, hiçbir ```case``` durumuna uymayan durumlar için kullanılır. ```default``` durumu, switch-case yapısında en sona yazılır.
+
+	
+4.``break``` ifadesi, her bir ```case``` bloğunun sonunda bulunmalıdır. Bu, programın diğer durumları kontrol etmeksizin switch-case yapısından çıkmasını sağlar.
+
+	
+Switch-case yapısı, birçok durumu kontrol etmek ve farklı işlemler gerçekleştirmek için kullanışlıdır. Özellikle belirli değerlere göre yapılan işlemlerde if-else yapısından daha okunabilir bir seçenek sunabilir. Ancak, switch-case yapısı yalnızca sabit ifadelerin kontrolü için kullanılabilir ve karşılaştırma yapılacak ifadenin tam olarak belirlenmesi gerekmektedir.
