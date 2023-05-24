@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 23/05/2023)
+(Son güncelleme: 24/05/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
@@ -27,6 +27,9 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Temel Giriş ve Çıkış İşlemleri (cin ve cout)](#temel-giriş-ve-çıkış-i̇şlemleri-cin-ve-cout)
   - [İf,Else Ve Else İf Yapıları](#i̇felse-ve-else-i̇f-yapıları)
   - [Switch-Case Yapısı](#switch-case-yapısı)
+  - [While Döngüsü](#while-döngüsü)
+  - [For Döngüsü](#for-döngüsü)
+  - [Dowhile Döngüsü](#dowhile-döngüsü)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -453,3 +456,104 @@ switch (değer) {
 
 	
 Switch-case yapısı, birçok durumu kontrol etmek ve farklı işlemler gerçekleştirmek için kullanışlıdır. Özellikle belirli değerlere göre yapılan işlemlerde if-else yapısından daha okunabilir bir seçenek sunabilir. Ancak, switch-case yapısı yalnızca sabit ifadelerin kontrolü için kullanılabilir ve karşılaştırma yapılacak ifadenin tam olarak belirlenmesi gerekmektedir.
+
+	
+## While Döngüsü
+
+Döngüler, belirli bir işlemi tekrar tekrar gerçekleştirmek için kullanılan kontrol yapılarıdır. Döngüler, belirli bir koşul sağlandığı sürece belirli bir kod bloğunu tekrarlayarak çalışırlar.
+
+```
+#include <iostream> 
+using namespace std; 
+
+int main() { 
+int a; 
+a = 1; //ilk değer , initialization 
+
+while (a<10) { 
+cout << "merhaba" <<a<< endl; 
+a++; // whil(a<10) sayesinde sürekli arttırken 9da duracaktır  
+} 
+
+	return 0; 
+} 
+```
+Terminal 
+```
+merhaba1
+merhaba2
+merhaba3
+merhaba4
+merhaba5
+merhaba6
+merhaba7
+merhaba8
+merhaba9
+```
+	
+## For Döngüsü
+	
+For yapısı ile ilk değer,koşul ve adım sayısı değelerini tek satırda hallediyoruz. 
+	
+```
+#include <iostream> 
+using namespace std; 
+
+int main() { 
+
+for (int i = 1; i < 11; i++) 
+cout << i << "hi" << endl; 
+
+	return 0; 
+} 	
+```
+Terminal
+
+```
+1hi
+2hi
+3hi
+4hi
+5hi
+6hi
+7hi
+8hi
+9hi
+10hi
+```
+			 
+## Dowhile Döngüsü
+
+***Önemli:*** Dowhile'ın while ve for dönülerinden farkı önce çalıştırır sonra döngüyü başlatır. 
+Örneğin 
+```
+int a = 100;
+int i = 100;
+
+do {
+    // Kod bloğu
+    i++;
+} while (i < a);
+```
+Yukarıdaki örneği diğer 2 döngüde deneseydik çalıştırmazdı fakat dowhile döngüsünde bir kereye mahsus çalıştırır.
+----------------------------------------------------------------------------------------------------	
+```
+#include <iostream> 
+using namespace std; 
+
+int x = 1; 
+
+do { 
+ cout << "eyup ece" << x << endl; 
+ x = x * 3; 
+}while(x < 10); 
+
+  return 0; 
+} 	
+```
+Terminal
+```
+eyup ece1
+eyup ece3
+eyup ece9
+```
