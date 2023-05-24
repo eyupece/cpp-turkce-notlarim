@@ -30,6 +30,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [While Döngüsü](#while-döngüsü)
   - [For Döngüsü](#for-döngüsü)
   - [Dowhile Döngüsü](#dowhile-döngüsü)
+  - [Break ve Continue Komutları](#break-ve-continue-komutları)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -557,3 +558,41 @@ eyup ece1
 eyup ece3
 eyup ece9
 ```
+
+## Break ve Continue Komutları 
+
+Break kırıp devamını getirmezken continue atlayıp devamını getiriyor 
+
+```	
+#include <iostream> 
+using namespace std; 
+
+int main() { 
+
+for (int i = 0; i < 10;i++) { 
+if (i == 5) 
+break; 
+cout << i << endl; 
+} 
+
+  return 0; 
+} 
+```
+ifadesinde terminalde 1,2,3,4 ifadeleri yazılıp sonlanırken
+
+```
+#include <iostream> 
+using namespace std; 
+
+int main() { 
+
+for (int i = 0; i < 10;i++) { 
+if (i == 5) 
+continue; // break kırıp devamını getirmezken continue atlayıp devamını getiriyor 
+cout << i << endl; 
+} 
+ 
+  return 0; 
+} 
+```
+ifadesinde 1,2,3,4 ve 5 atlanıp 6,7,8,9 ifadeleri ekranda çıktı olarak yer alır
