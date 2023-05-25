@@ -32,6 +32,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Dowhile Döngüsü](#dowhile-döngüsü)
   - [Break ve Continue Komutları](#break-ve-continue-komutları)
   - [İç İçe Birden Fazla Döngüler](#i̇ç-i̇çe-birden-fazla-döngüler)
+  - [Basit Fonksiyon Yapıları ve Prosedürler](#basit-fonksiyon-yapıları-ve-prosedürler)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -617,3 +618,61 @@ for (int i = 0; i < 10; i++) {
 } 
 ```
 ![https://github.com/eyupece/cpp-note/blob/main/iciceterm.png](./iciceterm.png "GitHub")
+	
+## Basit Fonksiyon Yapıları ve Prosedürler 
+
+***Bir Kod Bloğunun Koşula Bağlanmasını ```if``` ile yapmıştık***
+
+***Bir kod bloğunun tekrar edilmesini ```döngülerle ``` yapmıştık***
+
+Şimdi de 
+	
+***Bir kod bloğunun parametrize edilmesini konuşacağız.***
+	
+Bu işlemi yapmamızın birden fazla nedeni var.
+
+İlk olarak [ChatGpt](https://chat.openai.com/)'nin yanıtıyla başlayalım
+			
+1-)Verilerin gruplanması: Diziler, benzer türdeki verilerin gruplanmasını sağlar. Bir fonksiyon, belirli bir veri kümesiyle çalışmak için bir dizi parametresi alabilir. Bu, bir dizi içindeki tüm verileri tek bir parametre ile fonksiyona iletebilmenizi sağlar.
+
+2-)Bellek verimliliği: Diziler, ardışık bellek bloklarında depolanır. Bir fonksiyon, bir dizi parametresi alarak, bellekteki verilere doğrudan erişebilir. Bu, her bir veri elemanının ayrı ayrı kopyalanmasına veya aktarılmasına gerek kalmadan veriye erişimi hızlandırır ve bellek kullanımını optimize eder.
+
+3-)Genel kullanılabilirlik: Bir fonksiyonun dizi parametreleri alması, aynı fonksiyonun farklı boyutlardaki dizilerle çalışabilmesini sağlar. Örneğin, bir sıralama işlevi, farklı boyutlardaki dizileri sıralamak için aynı kodu kullanabilir. Bu, kodun yeniden kullanılabilirliğini artırır ve işlevin daha genel bir kullanım alanına sahip olmasını sağlar.
+
+4-)İşlevsellik: Dizi parametreleri, fonksiyonlara veri manipülasyonu veya dizi üzerinde yapılan diğer işlemler için daha fazla işlevsellik sağlar. Örneğin, bir fonksiyon, dizi parametresi üzerinde bir döngü kullanarak tüm elemanları dolaşabilir ve her bir eleman üzerinde belirli bir işlem gerçekleştirebilir.
+
+5-)Hafıza paylaşımı: Dizi parametreleri, bellekteki verilerin paylaşılmasını sağlar. Bir fonksiyona bir dizi geçirildiğinde, aslında bellekteki aynı verilere işaret eden bir referansın kopyası geçirilir. Bu, bellek kullanımını azaltır ve veri kopyalamasıyla ilgili maliyeti düşürür.
+
+İkinci olarak da;
+			 
+Bir fonksiyon kullanarak bir dizinin tüm elemanlarını döngü ile işlemek, tekrarlayan kodları azaltır ve daha temiz bir yapı oluşturur.
+
+```
+#include <iostream> 
+using namespace std; 
+
+int fonks(int x) { 
+cout << x*2  << endl; 
+return x * 2; 
+} 
+
+int main() { 
+
+fonks(10); 
+fonks(20);
+	
+	return 0; 
+} 
+```
+Terminal
+```
+20
+40
+```
+f fonksiyonunda return kullanmamızın sebebini [ChatGpt](https://chat.openai.com/) şu şekilde açıklıyor:
+
+Bu C++ kodunda herhangi bir derleme hatası yok, ancak fonks fonksiyonunun int dönüş türüne sahip olmasına rağmen, fonksiyon sonunda bir return ifadesi yok. Bu nedenle, fonks fonksiyonu herhangi bir değer döndürmez. Eğer fonksiyonun bir değer döndürmesi gerekiyorsa, return ifadesi fonksiyon sonunda eklenmelidir. 
+
+int gibi bir değer dönüş türü belirtilmişse, fonksiyonun bir değer döndürmesi gerekir. return ifadesi, fonksiyonun sonunda, döndürmek istediğimiz değeri belirtmek için kullanılır. Eğer bir değer döndürmeyi unutursak, program davranışı tanımsız olur. C++ standartlarına göre, böyle bir durumda programın davranışı belirsizdir ve hata vermesi gerekmeyebilir.  
+
+ 
