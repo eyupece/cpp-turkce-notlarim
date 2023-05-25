@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 24/05/2023)
+(Son güncelleme: 25/05/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
@@ -31,6 +31,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [For Döngüsü](#for-döngüsü)
   - [Dowhile Döngüsü](#dowhile-döngüsü)
   - [Break ve Continue Komutları](#break-ve-continue-komutları)
+  - [İç İçe Birden Fazla Döngüler](#i̇ç-i̇çe-birden-fazla-döngüler)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -352,7 +353,7 @@ klavyede girilen degerin 10 fazlasi 80 olur
 
 kod yazarken en çok kullanılan yapılardan biriyle karşı karşıyayız.
 
-***İf yapısı*** belirli koşula bağlı olarak kodu çıkarmamıza olanak sağlar. Mesela eğer(if) x sayısı 0'dan büyükse bu sayı pozitiftir.
+# İf yapısı belirli koşula bağlı olarak kodu çıkarmamıza olanak sağlar. Mesela eğer(if) x sayısı 0'dan büyükse bu sayı pozitiftir.
 ```
 #include <iostream>
 using namespace std;
@@ -370,7 +371,7 @@ a 20'den kucuktur ifadesini yazar.
 	
 Bu kodu kendiniz deneyip a sayısıyla oynama yapın. a sayısını 20ye eşit ya da büyük yaparsanız ekranda bir şey görmeyeceğinizi test edin.
 	
-***Else yapısı*** şayet değilseyi ifade ediyor. Yani Eğer … değilse o zaman …. 
+# Else yapısı  şayet değilseyi ifade ediyor. Yani Eğer … değilse o zaman …. 
 ***Not:*** Else yapısından bahsedebilmemiz için if yapısının kullanılmış olması gerekiyor. Yani aslında if ile bir koşul belirtiyoruz ve o sağlamazsa 
 kalan değerler için else geçerlidir diyoruz.
 ***Önemli NOT : ***  " = " operatörü C dilinde bir değişkene değer atamamızı sağlarken " == " operatörü ise "eşit mi?" koşulunu denetler, eğer değerler eşitse true (1) döndürür, değilse false (0) döndürür. 
@@ -380,7 +381,7 @@ a=20 diye bir sayı tanımladığımızı düşünelim. Bu koddan sonra a=10 der
 "assignment" yani atama işlemidir. a=10 ifadesinden sonra a'nın yeni değeri 10 olur.
 	
 
-***Else if yapısı*** eğer değilse … şeklinde açıklanabilir.
+# Else if yapısı eğer değilse … şeklinde açıklanabilir.
 
 Şimdi bir örnek üzerinden if,else if ve else ifadelerine bakalım.
 	
@@ -596,3 +597,23 @@ cout << i << endl;
 } 
 ```
 ifadesinde 1,2,3,4 ve 5 atlanıp 6,7,8,9 ifadeleri ekranda çıktı olarak yer alır
+
+	
+## İç İçe Birden Fazla Döngüler	
+
+```	
+#include <iostream> 
+using namespace std; 
+	
+int main() { 
+	
+for (int i = 0; i < 10; i++) { 
+ for (int j = 0; j < 10; j++) { 
+    cout << i << " " << j << ","; 
+  } 
+  cout << endl; 
+} 
+	return 0; 
+} 
+```
+![https://github.com/eyupece/cpp-note/blob/main/iciceterm.png](./iciceterm.png "GitHub")
