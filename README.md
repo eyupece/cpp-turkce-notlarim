@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 25/05/2023)
+(Son güncelleme: 27/05/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
@@ -33,6 +33,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Break ve Continue Komutları](#break-ve-continue-komutları)
   - [İç İçe Birden Fazla Döngüler](#i̇ç-i̇çe-birden-fazla-döngüler)
   - [Basit Fonksiyon Yapıları ve Prosedürler](#basit-fonksiyon-yapıları-ve-prosedürler)
+  - [Fonksiyonların Değer Döndürmesi ve Çağrılması ](#fonksiyonların-değer-döndürmesi-ve-çağrılması)
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -675,4 +676,47 @@ Bu C++ kodunda herhangi bir derleme hatası yok, ancak fonks fonksiyonunun int d
 
 int gibi bir değer dönüş türü belirtilmişse, fonksiyonun bir değer döndürmesi gerekir. return ifadesi, fonksiyonun sonunda, döndürmek istediğimiz değeri belirtmek için kullanılır. Eğer bir değer döndürmeyi unutursak, program davranışı tanımsız olur. C++ standartlarına göre, böyle bir durumda programın davranışı belirsizdir ve hata vermesi gerekmeyebilir.  
 
- 
+ ## Fonksiyonların Değer Döndürmesi ve Çağrılması 
+```	
+#include <iostream> 
+using namespace std; 
+
+int f(int x) { 
+
+cout << x  << endl; 
+
+return 5; 
+} 
+
+int main() { 
+
+cout << f(10) << endl; 
+cout << f(20) << endl; 
+f(35); 
+	
+return 0; 
+} 
+```
+Terminal
+```
+10
+5
+20
+5
+35
+```
+	
+Yazdığımız kodun açıklaması şu şekilde:
+	
+Ana fonksiyonumuz main fonksiyon olduğu için direkt ona geçiyoruz.  
+	
+f() fonksiyonu çağrıldığında, önce cout << x << endl; ifadesi çalışır ve x değeri ekrana yazdırılır. 
+Ardından return 5; ifadesi ile f() fonksiyonu sonlandırılır ve 5 değeri çağrıldığı yere döndürülür. 
+
+main() fonksiyonunda ise, önce f(10) çağrısı yapılarak 10 değeri ekrana yazdırılır ve f() fonksiyonu 5 değeri ile sonlandırılır. Sonra cout << f(10) << endl; ifadesi çalıştırılarak, f(10) fonksiyonunun döndürdüğü 5 değeri ekrana yazdırılır. 
+
+Aynı şekilde f(20) çağrısı da yapılarak önce 20 değeri ekrana yazdırılır ve f() fonksiyonu 5 değeri ile sonlandırılır.
+Sonra cout << f(20) << endl; ifadesi çalıştırılarak, f(20) fonksiyonunun döndürdüğü 5 değeri ekrana yazdırılır. 
+
+Son olarak, f(35) fonksiyonu çağrılır ve sadece 35 değeri ekrana yazdırılır. 
+Fonksiyon sonunda return ifadesi olmadığından, fonksiyon sonlandığında herhangi bir değer döndürülmez. 
