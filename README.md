@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 27/05/2023)
+(Son güncelleme: 28/05/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
@@ -34,6 +34,10 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [İç İçe Birden Fazla Döngüler](#i̇ç-i̇çe-birden-fazla-döngüler)
   - [Basit Fonksiyon Yapıları ve Prosedürler](#basit-fonksiyon-yapıları-ve-prosedürler)
   - [Fonksiyonların Değer Döndürmesi ve Çağrılması ](#fonksiyonların-değer-döndürmesi-ve-çağrılması)
+  - [Recursive Functions(Özyineli Fonksiyonlar) ](#recursive-functionsözyineli-fonksiyonlar)
+  - [Random Number Genarator ](#random-number-genarator)
+
+
 ## Hello World
 
 Her satırın sonuna ; koymalısın. C++'da bu satırın bittiğini ifade eder.
@@ -720,3 +724,83 @@ Sonra cout << f(20) << endl; ifadesi çalıştırılarak, f(20) fonksiyonunun d�
 
 Son olarak, f(35) fonksiyonu çağrılır ve sadece 35 değeri ekrana yazdırılır. 
 Fonksiyon sonunda return ifadesi olmadığından, fonksiyon sonlandığında herhangi bir değer döndürülmez. 
+	
+	
+ ## Recursive Functions(Özyineli Fonksiyonlar)
+	
+BÜTÜN iterative(döngü) fonksiyonlar Recursive, BÜTÜN recursive fonksiyonlar iterative yazilabilir. 
+
+Recursive fonksiyonlar, kendilerini çağıran ve bir sorunu küçük alt sorunlara bölerek çözen fonksiyonlardır. Yani, bir fonksiyon içerisinde kendisiyle tekrar tekrar çağrılar yaparak işlemi gerçekleştirir.
+	
+Recursive fonksiyonlar, problemleri parçalara ayırarak daha küçük ve daha yönetilebilir alt sorunlara dönüştürür. Her alt sorun, aynı fonksiyonu tekrar çağırarak çözülür. Alt sorunlar çözüldükten sonra, sonuçlar birleştirilerek orijinal sorunun çözümü elde edilir.
+	
+```
+#include <iostream> 
+using namespace std; 
+
+/* 
+factorial(4) = 4 * factorial(3) 
+factorial(3) = 3 * factorial(2) 
+factorial(2) = 2 * factorial(1) 
+factorial(1) = 1 
+*/ 
+	
+//özyineli(recursive) fonksiyonlar bir ifadeyi yine kendi biçiminde ifade etme işidir.  
+// ilk başta koşulu yani n'in 1 olma durumunda 1 olmasını belirleyip ardından yukarıdaki tabloda adım adım ilerliyoruz. 
+//önce factorial(4) ifadesini yerine koyuyoruz sonrasında diğer factorial terimleri bulup en son 1de yerine koyduğumuzda işlemi buluyoruz. 
+
+int fact(int n) { 
+if (n == 1) 
+return 1; 
+return n * fact(n - 1); 
+} 
+ 
+int main() { 
+int sayi; 
+cin >> sayi; 
+cout << fact(sayi) << endl; 
+
+return 0; 
+} 
+```
+	
+burada parça parça ilerleyip aslında n! = n . (n-1)! metodundan faydalanıyorsun ve en sonunda 1e ulaşında işlemi noktalıyoruz.
+
+***NOT :***
+
+Return ifadesini çalıştırırsa sonrasını çalıştırmaz 
+O yüzden 
+
+```
+int fac(int n) { 
+if (n == 1) 
+return 1; 
+//Else.....  Burada else yazılmasına gerek yoktur. Zaten return 1 i çalıştırırsa sonrasını yazdırmaz 
+} 
+```
+ "return" ifadesi çalıştığında, fonksiyon o noktada sonlanır ve geri döner. Dolayısıyla, "return" ifadesi çalıştığında sonrasındaki kod bloğu veya ifadeler çalıştırılmaz. Bu nedenle, bir fonksiyonda "return" ifadesi kullanıldığında, "else" veya başka bir şart kontrol bloğu yazmanıza gerek yoktur.
+	
+
+ ## Random Number Genarator
+```
+#include <iostream> 
+using namespace std; 
+  
+int main() { 
+int rg; 
+srand(time(NULL)); // seed(tohum-besleme) 
+rg = rand(); 
+cout << rg; 
+
+return 0; 
+} 	
+```	
+
+	
+Bu kodda üretilen rasgele sayılar, rand fonksiyonunun ürettiği 0 ile RAND_MAX (C++ standardına göre minimum 32767) arasındaki tam sayı değerleridir. Ancak, bu rasgele sayılar daha sonra modulo (%) işlemine tabi tutulduğunda, 10'un üssüne göre hesaplanmış bir değere dönüştürülecektir. 
+
+Yani, cout << rg % 100000; ifadesi, 0 ile 99999 arasındaki tam sayıları üretir ve ekrana yazdırır. Bu nedenle, ekrana yazdırılan sayı en fazla 5 basamaklı olabilir. 
+
+Eğer daha fazla basamaklı bir sayı elde etmek istiyorsanız, rg % (10^k) şeklinde bir işlem yapabilirsiniz, burada k istediğiniz basamak sayısıdır. Örneğin, cout << rg % 1000000; ifadesi 0 ile 999999 arasındaki tam sayıları üretecektir. 
+	
+[Zar Atma Programı](https://github.com/eyupece/cpp-my-projects/blob/main/Rolling%20the%20dice.cpp) ile random number genaratorun mantığını daha net anlayabilirsiniz.
