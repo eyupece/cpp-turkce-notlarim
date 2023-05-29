@@ -812,7 +812,7 @@ Kullanılan çoklu veri elemanlarını depolamak için kullanılan veri yapılar
 Bir dizi, aynı türden birden çok öğeyi bellekte ardışık olarak saklar.
 Köşeli parantez şarttır.
 	
-![https://github.com/eyupece/cpp-note/blob/main/arrays.png](./arrays.png "GitHub")
+![https://github.com/eyupece/cpp-note/blob/main/Arrays.png](./Arrays.png "GitHub")
 	
 ```	
 #include <iostream> 
