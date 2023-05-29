@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 28/05/2023)
+(Son güncelleme: 29/05/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
@@ -36,7 +36,8 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Fonksiyonların Değer Döndürmesi ve Çağrılması ](#fonksiyonların-değer-döndürmesi-ve-çağrılması)
   - [Recursive Functions(Özyineli Fonksiyonlar) ](#recursive-functionsözyineli-fonksiyonlar)
   - [Random Number Genarator ](#random-number-genarator)
-
+  - [Arrays(Diziler)](#arraysdiziler)
+ 
 
 ## Hello World
 
@@ -804,3 +805,43 @@ Yani, cout << rg % 100000; ifadesi, 0 ile 99999 arasındaki tam sayıları üret
 Eğer daha fazla basamaklı bir sayı elde etmek istiyorsanız, rg % (10^k) şeklinde bir işlem yapabilirsiniz, burada k istediğiniz basamak sayısıdır. Örneğin, cout << rg % 1000000; ifadesi 0 ile 999999 arasındaki tam sayıları üretecektir. 
 	
 [Zar Atma Programı](https://github.com/eyupece/cpp-my-projects/blob/main/Rolling%20the%20dice.cpp) ile random number genaratorun mantığını daha net anlayabilirsiniz.
+
+## Arrays(Diziler)
+	
+Kullanılan çoklu veri elemanlarını depolamak için kullanılan veri yapılarıdır. 
+Bir dizi, aynı türden birden çok öğeyi bellekte ardışık olarak saklar.
+Köşeli parantez şarttır.
+	
+![https://github.com/eyupece/cpp-note/blob/main/arrays.png](./arrays.png "GitHub")
+	
+```	
+#include <iostream> 
+using namespace std; 
+
+int main(){ 
+  
+	int a[4] = { 1, 9, 0, 5 }; 
+
+           cout << a[0] << endl; // 1 görmeyi bekliyoruz  
+           cout << a[1] + a[3] << endl; // 14 görmeyi bekliyoruz 
+           cout << a[2] - a[3] << endl; // -5 görmeyi bekliyoruz 
+
+  a[1] = 4; 
+
+       cout << a[1] << endl; // normalde a[1] 9du fakat önceki satırda 4 diye tanımladığımız için artık 4 
+
+   for (int i = 0; i < 4; i++) { 
+   	cout << a[i] << endl; // sırayla yazıyor 
+   } 
+
+   	int b[2]; // burada da kullanıcıdan girilmesini sağlıyoruz 
+
+   	cin >> b[0] >> b[1]; 
+
+   for (int j = 0; j < 2; j++) { 
+  	 cout << b[j] << endl; 
+   } 
+
+return 0; 
+} 
+```
