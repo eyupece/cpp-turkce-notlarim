@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 29/05/2023)
+(Son güncelleme: 30/05/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
@@ -845,3 +845,47 @@ int main(){
 return 0; 
 } 
 ```
+
+			     
+**Kullanıcıdan Dizinin Kaç boyutlu olduğunu alma ve elemanlarını girdirme : **
+
+Bu işlemi yapmanın benim bildiğim iki yolu var. (bu notu hazırladığım an)
+
+1. si  ``` int* a = (int*)malloc(sizeof(int) * n);  ``` metodu. Bunu ilerideki notlarımızda daha detaylı anlatacağız.
+			     
+			  
+2. si ise birazcık komut birazcık döngü kullanarak yapma işlemi.
+			     
+```
+#include <iostream> 
+
+using namespace std; 
+
+int main() { 
+
+     cout << "Enter the size of the array: "; 
+
+      int size; 
+
+      cin >> size; 
+
+    int* arr = new int[size];
+
+       cout << "Enter the " << size << " elements of the array. " << endl; 
+
+    for (int i = 0; i < size; i++) { 
+        cin >> arr[i]; 
+        cout << arr[i] << endl; 
+    } 
+
+    delete[] arr; // Dinamik olarak oluşturulan diziyi bellekten temizlemek için  
+
+    // delete[] operatörünü kullanırız. 
+
+	return 0; 
+} 		     
+			     
+```
+ilk  aşamada ```int* arr = new int[size]```	adında bir kod satırında size diye bir değişken tanımladık. Sonrasında döngü yardımı ile sayıları girdik 
+			     
+			     
