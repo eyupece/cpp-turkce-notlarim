@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 30/05/2023)
+(Son güncelleme: 31/05/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
@@ -37,6 +37,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Recursive Functions(Özyineli Fonksiyonlar) ](#recursive-functionsözyineli-fonksiyonlar)
   - [Random Number Genarator ](#random-number-genarator)
   - [Arrays(Diziler)](#arraysdiziler)
+  - [Çok Boyutlu Diziler](#çok-boyutlu-diziler)
  
 
 ## Hello World
@@ -847,9 +848,9 @@ return 0;
 ```
 
 			     
-**Kullanıcıdan Dizinin Kaç boyutlu olduğunu alma ve elemanlarını girdirme : **
+**Kullanıcıdan Dizinin Kaç boyutlu olduğunu alma ve elemanlarını girdirme :**
 
-Bu işlemi yapmanın benim bildiğim iki yolu var. (bu notu hazırladığım an)
+  Bu işlemi yapmanın benim bildiğim iki yolu var. (bu notu hazırladığım an)
 
 1. si  ``` int* a = (int*)malloc(sizeof(int) * n);  ``` metodu. Bunu ilerideki notlarımızda daha detaylı anlatacağız.
 			     
@@ -888,4 +889,7 @@ int main() {
 ```
 ilk  aşamada ```int* arr = new int[size]```	adında bir kod satırında size diye bir değişken tanımladık. Sonrasında döngü yardımı ile sayıları girdik 
 			     
-			     
+	
+## Çok Boyutlu Diziler
+	
+![https://github.com/eyupece/cpp-note/blob/main/i2dArrays.png](./2dArrays.png "GitHub")
