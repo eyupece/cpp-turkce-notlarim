@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 31/05/2023)
+(Son güncelleme: 01/06/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
@@ -33,12 +33,19 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Break ve Continue Komutları](#break-ve-continue-komutları)
   - [İç İçe Birden Fazla Döngüler](#i̇ç-i̇çe-birden-fazla-döngüler)
   - [Basit Fonksiyon Yapıları ve Prosedürler](#basit-fonksiyon-yapıları-ve-prosedürler)
-  - [Fonksiyonların Değer Döndürmesi ve Çağrılması ](#fonksiyonların-değer-döndürmesi-ve-çağrılması)
-  - [Recursive Functions(Özyineli Fonksiyonlar) ](#recursive-functionsözyineli-fonksiyonlar)
-  - [Random Number Genarator ](#random-number-genarator)
+  - [Fonksiyonların Değer Döndürmesi ve Çağrılması](#fonksiyonların-değer-döndürmesi-ve-çağrılması)
+  - [Recursive Functions(Özyineli Fonksiyonlar)](#recursive-functionsözyineli-fonksiyonlar)
+  - [Random Number Genarator](#random-number-genarator)
   - [Arrays(Diziler)](#arraysdiziler)
   - [Çok Boyutlu Diziler](#çok-boyutlu-diziler)
- 
+  Eklenecek- [Pointerlara(gösterici)(işaretçi) Giriş](#)
+  Eklenecek- [Dizilerin Pointerlarla Kullanılması](#)
+  Eklenecek- [Fonksiyonların Pointerlarla Kullanımı ve Call by Reference](#)
+  Eklenecek- [Dinamik Hafıza ve Malloc](#)
+  Eklenecek- [Fonksiyonların Dizileri Parametre Alması](#)
+  Eklenecek- [String(Dizgi) Kavramı ve Karakter Dizileri](#)
+  Eklenecek- [Stringlerin Karşılaştırılması, Sığ Kopyalama ve Bus Error 10](#)
+  Eklenecek- [String Fonksiyonu Yazmak, Strcpy ve Strlen](#)
 
 ## Hello World
 
