@@ -891,5 +891,47 @@ ilk  aşamada ```int* arr = new int[size]```	adında bir kod satırında size di
 			     
 	
 ## Çok Boyutlu Diziler
+
+Çok boyutlu diziler, tek boyutlu dizilerin bir genelleştirmesidir.
+Tek boyutlu dizilerin ardışık bellek bloklarından oluştuğu gibi, çok boyutlu diziler de ardışık bellek bloklarından oluşan bir veri yapısıdır. 
+Çok boyutlu diziler, verileri bir tablo veya matris gibi düzenli bir yapıda depolamak için kullanılır.
+
+C++ dilinde iki boyutlu diziler en yaygın olarak kullanılan çok boyutlu dizilerdir. Bir iki boyutlu dizi, satır ve sütunlardan oluşan bir tabloyu temsil eder.	
+
+```int matris[3][3];```
+	
+Bu tanımlama, 3 satır ve 3 sütundan oluşan bir tamsayı matrisini oluşturur. Her bir hücreye erişmek için indeksleri kullanabilirsiniz. 
+Örneğin, matris[0][0] ilk hücreyi, matris[1][2] ikinci satırın üçüncü sütununu temsil eder.
 	
 ![https://github.com/eyupece/cpp-note/blob/main/i2dArrays.png](./2dArrays.png "GitHub")
+
+```	
+#include <iostream>  
+using namespace std; 
+
+int main() { 
+
+    int a[2][3] = { { 2,4,9 }, { 5,7,4 } }; 
+
+    for (int i = 0; i < 2; i++) { 
+
+        for (int j = 0; j < 3;j++) { 
+
+            cout <<a[i][j] << " "; 
+
+        } 
+      cout << endl; 
+     } 
+
+    int b[2][3]; 
+
+    for (int i = 0; i < 2; i++) { 
+
+        for (int j = 0; j < 3; j++) { 
+
+            cout << a[i][j] << " "; 
+        }
+    }	
+    return 0; 
+} 
+```
