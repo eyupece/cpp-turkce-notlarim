@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 01/06/2023)
+(Son güncelleme: 02/06/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
@@ -38,7 +38,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Random Number Genarator](#random-number-genarator)
   - [Arrays(Diziler)](#arraysdiziler)
   - [Çok Boyutlu Diziler](#çok-boyutlu-diziler)
-  Eklenecek- [Pointerlara(gösterici)(işaretçi) Giriş](#)
+  - [Pointerlara(gösterici)(işaretçi) Giriş](#pointerlaragöstericiişaretçilere-giriş)
   Eklenecek- [Dizilerin Pointerlarla Kullanılması](#)
   Eklenecek- [Fonksiyonların Pointerlarla Kullanımı ve Call by Reference](#)
   Eklenecek- [Dinamik Hafıza ve Malloc](#)
@@ -941,4 +941,39 @@ int main() {
     }	
     return 0; 
 } 
+```
+
+## Pointerlara(gösterici)(işaretçilere) Giriş 
+	
+Pointers, bir programlama terimidir ve bellekteki diğer verilere işaret eden değişkenlerdir. Bir bellek adresini tutarlar ve bu adres üzerindeki değerlere erişmek veya değiştirmek için kullanılırlar.
+
+Bir pointer, bir bellek bloğundaki verinin konumunu işaret eder. Bu veri, bir değişken, bir dizi veya başka bir bellek bölgesi olabilir. Pointerlar, programlama dillerinin hafıza manipülasyonu ve dinamik bellek tahsisine olanak sağlamak için önemli bir özelliğidir.
+
+Bir pointer, iki temel operasyonu gerçekleştirebilir: "işaret etmek" (dereference) ve "adres almak" (address-of). İşaret etmek, bir pointer'ın hedef veriye erişimini sağlar. Adres almak, bir değişkenin bellek adresini bir pointere atamayı veya başka bir değişkenin bellek adresini almayı sağlar.
+	
+![https://github.com/eyupece/cpp-turkce-notlarim/blob/main/gorsel/pointers.png](./gorsel/pointers.png "GitHub")
+	
+```
+#include <iostream> 
+using namespace std; 
+
+int main() { 
+int a = 10; 
+int *p; 
+p = &a;  
+
+cout << "a = " << a << endl; 
+cout << "p = " << p << endl; 
+cout << "*p = " << *p << endl; 
+cout << "&a = " << &a << endl; 
+
+	return 0; 
+} 	
+```
+Terminal
+```
+a = 10
+p = 0000009AE4FEFAA4
+*p = 10
+&a = 0000009AE4FEFAA4
 ```
