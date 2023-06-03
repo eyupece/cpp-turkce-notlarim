@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 02/06/2023)
+(Son güncelleme: 03/06/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
@@ -39,7 +39,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Arrays(Diziler)](#arraysdiziler)
   - [Çok Boyutlu Diziler](#çok-boyutlu-diziler)
   - [Pointerlara(gösterici)(işaretçi) Giriş](#pointerlaragöstericiişaretçilere-giriş)
-  Eklenecek- [Dizilerin Pointerlarla Kullanılması](#)
+  - [Dizilerin Pointerlarla Kullanılması](#)
   Eklenecek- [Fonksiyonların Pointerlarla Kullanımı ve Call by Reference](#)
   Eklenecek- [Dinamik Hafıza ve Malloc](#)
   Eklenecek- [Fonksiyonların Dizileri Parametre Alması](#)
@@ -976,4 +976,43 @@ a = 10
 p = 0000009AE4FEFAA4
 *p = 10
 &a = 0000009AE4FEFAA4
+```
+
+	
+## Dizilerin Pointerlarla Kullanılması
+
+```
+#include <iostream> 
+using namespace std; 
+
+int main() { 
+
+int a[3] = { 1,2,3 }; 
+int *p;  
+p = &a[0]; // p = a ifadesiyle aynı anlama gelir. 
+
+	cout << "a = " << p[1] << endl; 
+
+p[1] = 5; 
+
+	cout << "a = " << p[1] << endl; 
+	cout << "a = " << a[1] << endl; 
+	
+int b = 10; 
+int *q; 
+q = &b; 
+*q = 20; 
+
+	cout << b << endl;  
+
+ return 0; 
+} 	
+```
+	
+Terminal
+```
+a = 2
+a = 5
+a = 5
+20	
 ```
