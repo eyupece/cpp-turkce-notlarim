@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 03/06/2023)
+(Son güncelleme: 04/06/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
@@ -39,8 +39,8 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Arrays(Diziler)](#arraysdiziler)
   - [Çok Boyutlu Diziler](#çok-boyutlu-diziler)
   - [Pointerlara(gösterici)(işaretçi) Giriş](#pointerlaragöstericiişaretçilere-giriş)
-  - [Dizilerin Pointerlarla Kullanılması](#)
-  Eklenecek- [Fonksiyonların Pointerlarla Kullanımı ve Call by Reference](#)
+  - [Dizilerin Pointerlarla Kullanılması](#dizilerin-pointerlarla-kullanılması)
+  - [Fonksiyonların Pointerlarla Kullanımı ve Call by Reference](#fonksiyonların-pointerlarla-kullanımı-ve-call-by-reference)
   Eklenecek- [Dinamik Hafıza ve Malloc](#)
   Eklenecek- [Fonksiyonların Dizileri Parametre Alması](#)
   Eklenecek- [String(Dizgi) Kavramı ve Karakter Dizileri](#)
@@ -1016,3 +1016,42 @@ a = 5
 a = 5
 20	
 ```
+
+## Fonksiyonların Pointerlarla Kullanımı ve Call by Reference
+```
+#include <iostream> 
+using namespace std; 
+
+void g(int x) {  // call by value , değeri çağırma ( a değerinin x'e kopyalanması - g(a) -  
+x =0; 
+}  // scope of a variable  , değişkenin geçerlilik alanı. Süslü paratantez içerisinde geçerlidir 
+
+  
+void f(int* y) { 
+*y = 20; 
+}  // call by reference  
+
+// bu yaptığımız işlemle normalde bir fonksiyondan return 50 gibi tek bir değer alabiliyorduk fakat artık bu yöntemle istediğimiz kadar alabiliyoruz. 
+// neden int yerine void kullandığımız üzerine kafa yor. 
+
+int main() { 
+
+int a = 10; 
+int *p; 
+p = &a; 
+
+g(a); 
+	cout << a << endl;    // burada scope of variableden dolayı a'nın değerinin aynı kaldığını görmelisin. 
+
+f(p); 
+    cout << a << endl;    // burada ise pointer kullanıldığı için f fonksiyonunda a'nın değeri değişiyor. 
+
+	return 0; 
+} 
+```	
+Terminal
+```
+10
+20
+```
+EKLEME YAP
