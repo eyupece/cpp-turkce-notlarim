@@ -41,8 +41,8 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Pointerlara(gösterici)(işaretçi) Giriş](#pointerlaragöstericiişaretçilere-giriş)
   - [Dizilerin Pointerlarla Kullanılması](#dizilerin-pointerlarla-kullanılması)
   - [Fonksiyonların Pointerlarla Kullanımı ve Call by Reference](#fonksiyonların-pointerlarla-kullanımı-ve-call-by-reference)
-  Eklenecek- [Dinamik Hafıza ve Malloc](#)
-  Eklenecek- [Fonksiyonların Dizileri Parametre Alması](#)
+  - [Dinamik Hafıza ve Malloc](#dinamik-hafıza-ve-malloc)
+  - [Fonksiyonların Dizileri Parametre Alması](#fonksiyonların-dizileri-parametre-alması)
   Eklenecek- [String(Dizgi) Kavramı ve Karakter Dizileri](#)
   Eklenecek- [Stringlerin Karşılaştırılması, Sığ Kopyalama ve Bus Error 10](#)
   Eklenecek- [String Fonksiyonu Yazmak, Strcpy ve Strlen](#)
@@ -1094,3 +1094,95 @@ f fonksiyonuna neden return 0; ifadesini eklememiz gerekir?
 Eğer ```f``` fonksiyonu başarılı bir şekilde tamamlanırsa, ```*q``` işaret edilen bellek alanına 10 değerini atar. Bu durumda ```f``` fonksiyonunun geri dönüş değeri ```int``` türünde olmalı ve uygun bir değer döndürmelidir. 
 
 Burada ```return 0;``` ifadesi, ```f``` fonksiyonunun başarılı bir şekilde tamamlandığını ve herhangi bir hata olmadığını belirtir. Bu değer, işlevin geri dönüş değeri olarak ```main``` fonksiyonuna aktarılır. 
+
+##  Fonksiyonların Dizileri Parametre Alması 
+
+Aşağıdaki şekilde f fonksiyonunu kullanarak a[2] yi değiştirebiliriz fakat birazdan bakacağımız daha pratik bir yol sayesinde daha temiz bir kod elde ediyoruz. 
+	
+```
+#include <iostream> 
+using namespace std; 
+
+int f(int* p) { 
+
+ p[2] = 10; 
+
+ return 0; 
+} 
+
+int main() { 
+
+int a[3] = { 1, 2, 3 }; 
+int* p; 
+p = a; 
+	cout << a[2] << endl; 
+f(p); 
+	cout << a[2] << endl; 
+
+ return 0; 
+} 
+```
+Terminal
+	
+```
+3
+10
+```
+	
+Şimdi daha temiz koda bakalım.
+
+```
+#include <iostream> 
+using namespace std; 
+
+int f(int* p) { 
+
+ p[2] = 10; 
+
+ return 0; 
+} 
+
+int main() {
+	
+int a[3] = { 1, 2, 3 }; 
+	cout << a[2] << endl; 
+f(a); 
+	cout << a[2] << endl; 
+
+ return 0; 
+} 	
+```
+
+Şimdi de sırada bununla alakalı bir örnek var.
+
+Aşağıdaki örnekte dizinin elemanları toplayacağız.
+```	
+#include <iostream> 
+using namespace std; 
+  
+int topla(int* a,int boyut) { 
+
+ int toplam = 0; 
+
+	for (int i = 0; i < boyut; i++) { 
+
+ toplam += a[i]; 
+
+	} 
+
+ return toplam; 
+ } 
+
+int main() { 
+
+int a[3] = { 1, 2, 3 }; 
+
+	cout << topla(a,3) << endl; 
+
+ return 0; 
+} 
+```
+Terminal
+```
+6
+```
