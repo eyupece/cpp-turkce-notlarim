@@ -1,6 +1,6 @@
 # **C++ Notlarım**
 
-(Son güncelleme: 04/06/2023)
+(Son güncelleme: 05/06/2023)
 
 Türkçe c++ notlarıma hoş geldin. C++ notlarımı aktarırken aklına takılan herhangi bir noktayı sormaktan çekinme.
 
@@ -1054,4 +1054,43 @@ Terminal
 10
 20
 ```
-EKLEME YAP
+
+## Dinamik Hafıza ve Malloc 
+	
+```
+#include <iostream> 
+using namespace std; 
+
+int f(int* p) { 
+
+*p = 10; 
+
+ return 0; 
+} 
+
+int main() { 
+
+int* p = (int *)malloc(sizeof(int) * 4); // bu ifade int için ramde bir bölme aç demektir. * 4 ile 4e çıkarıyoruz bunu. 
+p[0] = 6; 
+	cout << p[0] << endl; 
+int* q = (int*)malloc(sizeof(int)); 
+*q = 50; 
+
+f(q); 
+	cout << *q << endl; // normal şartlarda *q ifadesini 50 diye tanımladık fakat f(q) ile  f fonksiyonundan değer alıp 10 çıkmasını sağladık. 
+
+ return 0; 
+} 	
+```
+Terminal 
+
+```
+6	
+10
+```
+	
+f fonksiyonuna neden return 0; ifadesini eklememiz gerekir? 
+
+Eğer ```f``` fonksiyonu başarılı bir şekilde tamamlanırsa, ```*q``` işaret edilen bellek alanına 10 değerini atar. Bu durumda ```f``` fonksiyonunun geri dönüş değeri ```int``` türünde olmalı ve uygun bir değer döndürmelidir. 
+
+Burada ```return 0;``` ifadesi, ```f``` fonksiyonunun başarılı bir şekilde tamamlandığını ve herhangi bir hata olmadığını belirtir. Bu değer, işlevin geri dönüş değeri olarak ```main``` fonksiyonuna aktarılır. 
