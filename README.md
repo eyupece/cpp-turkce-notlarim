@@ -43,7 +43,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Fonksiyonların Pointerlarla Kullanımı ve Call by Reference](#fonksiyonların-pointerlarla-kullanımı-ve-call-by-reference)
   - [Dinamik Hafıza ve Malloc](#dinamik-hafıza-ve-malloc)
   - [Fonksiyonların Dizileri Parametre Alması](#fonksiyonların-dizileri-parametre-alması)
-  Eklenecek- [String(Dizgi) Kavramı ve Karakter Dizileri](#)
+  - [String(Dizgi) Kavramı ve Karakter Dizileri](#stringdizgi-kavramı-ve-karakter-dizileri)
   Eklenecek- [Stringlerin Karşılaştırılması, Sığ Kopyalama ve Bus Error 10](#)
   Eklenecek- [String Fonksiyonu Yazmak, Strcpy ve Strlen](#)
 
@@ -1186,3 +1186,54 @@ Terminal
 ```
 6
 ```
+
+## String(Dizgi) Kavramı ve Karakter Dizileri
+
+ Tek Tırnak  -> Karakter                 Çift Tırnak -> Dizgi(Metin)
+
+
+![https://github.com/eyupece/cpp-turkce-notlarim/blob/main/gorsel/String.png](./gorsel/String.png "GitHub")
+	
+
+
+![https://github.com/eyupece/cpp-turkce-notlarim/blob/main/gorsel/endofstring.png](./gorsel/endofstring.png "GitHub")
+	
+char d[6] = "evren";   
+
+Satırında 6 yazmamızın sebebi : son karaktere yukarıda belirtmiş olduğum gibi  
+C++ karakter dizileri sonlandırıcı bir null karakterle ('\0') (end of string) sona erer. 
+	
+	
+```
+#include <iostream> 
+using namespace std; 
+
+int main() { 
+
+const char* c = "cyprus"; 
+char d[6] = "evren"; 
+
+	cout << c << endl; 
+	cout << d << endl; 
+
+ return 0; 
+}
+```
+
+Terminal
+	
+```
+cyprus
+evren
+```
+	
+***ChatGpt açıklama :***
+
+7. Satırda const kullanılmasının sebebi 
+
+Bu satırda, c işaretçisi "cyprus" karakter dizisinin başlangıç adresine atandı. Ancak "cyprus" bir sabit karakter dizisi olduğundan, char* türündeki bir işaretçiye atanmamalıdır. Bu durum, geçerli C++ standartlarına göre uyarı verebilir veya hata oluşturabilir. 
+
+Daha iyi bir yaklaşım, const char* kullanmaktır: 
+Bu, karakter dizisinin değiştirilemez olduğunu belirtir ve uyarıyı ortadan kaldırır. 
+	
+***NOT:*** const kullanımında çeşit çeşit sıkıntılar doğabiliyor bunun üzerinde ilerleyen süreçlerde eklemeler yaparım.
