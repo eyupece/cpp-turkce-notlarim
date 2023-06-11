@@ -44,7 +44,7 @@ Her geçen gün yeni bir bilgi öğrendiğimden notlar güncellenebilir :)
   - [Dinamik Hafıza ve Malloc](#dinamik-hafıza-ve-malloc)
   - [Fonksiyonların Dizileri Parametre Alması](#fonksiyonların-dizileri-parametre-alması)
   - [String(Dizgi) Kavramı ve Karakter Dizileri](#stringdizgi-kavramı-ve-karakter-dizileri)
-  Eklenecek- [Stringlerin Karşılaştırılması, Sığ Kopyalama ve Bus Error 10](#)
+  - [Stringlerin Karşılaştırılması, Sığ Kopyalama ve Bus Error 10](#stringlerin-karşılaştırılması-sığ-kopyalama-ve-bus-error-10)
   Eklenecek- [String Fonksiyonu Yazmak, Strcpy ve Strlen](#)
 
 ## Hello World
@@ -1237,3 +1237,58 @@ Daha iyi bir yaklaşım, const char* kullanmaktır:
 Bu, karakter dizisinin değiştirilemez olduğunu belirtir ve uyarıyı ortadan kaldırır. 
 	
 ***NOT:*** const kullanımında çeşit çeşit sıkıntılar doğabiliyor bunun üzerinde ilerleyen süreçlerde eklemeler yaparım.
+
+
+## Stringlerin Karşılaştırılması, Sığ Kopyalama ve Bus Error 10
+	
+```
+#include <iostream> 
+using namespace std; 
+
+int main() { 
+	const char* c = "evren"; 
+	char d[6] = "evren"; 
+
+if (c == d) { 
+
+	cout << "esitler" << endl; 
+} 
+
+else {
+	cout << "esit degiller" << endl; 
+}	
+	
+ return 0; 
+} 	
+```
+
+Terminalde -> ```esit degiller``` ifadesi çıkar.
+	
+Çünkü bu ikisinin adresleri farklı. Bunu önlemek için şöyle bir metod deneyebilirsin
+
+```	
+#include <iostream> 
+using namespace std; 
+
+int main() { 
+	const char* c = "evren"; 
+	char d[6] = "evren"; 
+	d = c;  // shallow copy , sığ kopya   // bu satır !!!
+
+if (c == d) { 
+	cout << "esitler" << endl; 
+} 
+
+else{ 
+	cout << "esit degiller" << endl; 
+}
+	
+ return 0; 
+} 
+```
+
+Terminalde -> ```esitler``` ifadesi çıkar 
+	
+Fakat burada da şöyle bir sorun var. Diyelim d stringinin bir karakterini değiştirmek istedik. 
+d[2] = 'x';     
+Dedik. Şimdi c[2] 'yi ya da direkt c yi yazdırmak isterseniz terminalde x veya evxen yazdığını görürsünüz.  
